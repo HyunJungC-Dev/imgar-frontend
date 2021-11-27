@@ -4,7 +4,13 @@ import { useInView } from 'react-intersection-observer';
 
 // components
 import { Picture, Video } from '@/components';
-import { StyledArticle, StyledDiv, StyledExtraData, StyledFooter } from './ImageCard.styled';
+import {
+  IMAGECARD_UNIFORM_HEIGHT__PX,
+  StyledArticle,
+  StyledDiv,
+  StyledExtraData,
+  StyledFooter,
+} from './ImageCard.styled';
 import { ImageCardProps } from './ImageCard.type';
 
 // SVG
@@ -40,20 +46,20 @@ export default function ImageCard({
       `}
     >
       <StyledArticle imageCardWidth={imageCardWidth} ref={ref}>
-        <StyledDiv layoutOption={layoutOption}>
-          {!isAutoPlay || type === 'image/jpeg' || type === 'image/png' ? (
-            <Picture
-              alt=""
-              objectFit="cover"
-              imageWidth={imageCardWidth}
-              imageHeight={imageCardHeight}
-              imageId={thumbnailImageId}
-              inView={inView}
-            />
-          ) : (
-            <Video imageId={thumbnailImageId} inView={inView} />
-          )}
-        </StyledDiv>
+        {/* <StyledDiv layoutOption={layoutOption}> */}
+        {!isAutoPlay || type === 'image/jpeg' || type === 'image/png' ? (
+          <Picture
+            alt=""
+            objectFit="cover"
+            imageWidth={imageCardWidth}
+            imageHeight={layoutOption === 'uniform' ? 150 : imageCardHeight}
+            imageId={thumbnailImageId}
+            inView={inView}
+          />
+        ) : (
+          <Video imageId={thumbnailImageId} inView={inView} />
+        )}
+        {/* </StyledDiv> */}
         <StyledExtraData>
           {imageCount > 1 && (
             <strong>
