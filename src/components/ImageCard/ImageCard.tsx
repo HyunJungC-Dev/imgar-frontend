@@ -44,14 +44,14 @@ export default function ImageCard({
             alt=""
             objectFit="cover"
             imageWidth={imageCardWidth}
-            imageHeight={layoutOption === 'uniform' ? 150 : imageCardHeight}
+            imageHeight={layoutOption === 'uniform' ? IMAGECARD_UNIFORM_HEIGHT__PX - 70 : imageCardHeight}
             imageId={thumbnailImageId}
             inView={inView}
           />
         ) : (
           <Video
             objectFit="cover"
-            imageHeight={layoutOption === 'uniform' ? 150 : imageCardHeight}
+            imageHeight={layoutOption === 'uniform' ? IMAGECARD_UNIFORM_HEIGHT__PX - 70 : imageCardHeight}
             imageId={thumbnailImageId}
             inView={inView}
           />
