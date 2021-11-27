@@ -4,7 +4,7 @@ import { useTypedSelector } from '@/redux';
 import { SearchUrlQuery } from '@/redux/api/types/queries';
 import { a11yHidden } from '@/util/styleUtils';
 import React, { ReactElement, useCallback, useEffect, useMemo, useRef } from 'react';
-import { useHistory, useLocation } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 import {
   AdvancedSearchContainer,
   SearchOptionContainer,
