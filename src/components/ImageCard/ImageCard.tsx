@@ -4,13 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 // components
 import { Picture, Video } from '@/components';
-import {
-  IMAGECARD_UNIFORM_HEIGHT__PX,
-  StyledArticle,
-  StyledDiv,
-  StyledExtraData,
-  StyledFooter,
-} from './ImageCard.styled';
+import { IMAGECARD_UNIFORM_HEIGHT__PX, StyledArticle, StyledExtraData, StyledFooter } from './ImageCard.styled';
 import { ImageCardProps } from './ImageCard.type';
 
 // SVG
@@ -26,7 +20,6 @@ export default function ImageCard({
   imageCardWidth,
   imageCardHeight,
   layoutOption,
-  isLazyLoading,
 }: ImageCardProps): ReactElement {
   const { id, thumbnailImageId, title, upCount, downCount, commentCount, views, type, hasSound, isAlbum, imageCount } =
     postInfo;
@@ -46,7 +39,6 @@ export default function ImageCard({
       `}
     >
       <StyledArticle imageCardWidth={imageCardWidth} ref={ref}>
-        {/* <StyledDiv layoutOption={layoutOption}> */}
         {!isAutoPlay || type === 'image/jpeg' || type === 'image/png' ? (
           <Picture
             alt=""
@@ -57,9 +49,13 @@ export default function ImageCard({
             inView={inView}
           />
         ) : (
-          <Video imageId={thumbnailImageId} inView={inView} />
+          <Video
+            objectFit="cover"
+            imageHeight={layoutOption === 'uniform' ? 150 : imageCardHeight}
+            imageId={thumbnailImageId}
+            inView={inView}
+          />
         )}
-        {/* </StyledDiv> */}
         <StyledExtraData>
           {imageCount > 1 && (
             <strong>
