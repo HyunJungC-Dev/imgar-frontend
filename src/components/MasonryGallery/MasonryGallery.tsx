@@ -63,6 +63,7 @@ export default function MasonryGallery({ posts, id }: MasonryGalleryProps): Reac
 
   return (
     <>
+      <h2 className="a11y">Gallery</h2>
       <StyledSection ref={containerRef} id={id}>
         {posts.map((postInfo, index) => {
           const row = Math.floor(index / totalColumn);
