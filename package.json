@@ -69,6 +69,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@netlify/build": "^18.25.2",
     "@reduxjs/toolkit": "^1.6.1",
     "@types/react-router-hash-link": "^2.4.2",
     "@types/styled-components": "^5.1.14",
