@@ -1,7 +1,7 @@
 import { SortList, MasonryGalleryOptions } from '@/components';
 import { useAccountFoldersQuery } from '@/redux/api';
 import React, { ReactElement } from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch } from 'react-router';
 import { ProfileFavoriteHeaderContainer, ProfileFavoriteHeaderTitle } from './ProfileFavorite.styled';
 import { ProfileFavoriteHeaderState } from './ProfileFavorite.type';
 
