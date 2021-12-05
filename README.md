@@ -2,7 +2,7 @@
 
 ✅ [Imgur](https://imgur.com/)을 마크업, 접근성, 성능 관점에서 분석하고 개선하는 프로젝트
 
-- [배포](http://imgar-project.netlify.app/)
+- [배포](http://imgar.netlify.app/)
 - [개발 일지 - WIKI](https://github.com/team-badminton/imgar-frontend/wiki)
 
 ### 기술 스택
